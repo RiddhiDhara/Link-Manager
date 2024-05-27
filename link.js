@@ -237,6 +237,13 @@ function updateRecentLinks() {
   });
 }
 
+// -------------------laoder-------------
+
+window.onload = function () {
+  var preloader = document.querySelector(".preloader");
+  preloader.style.display = "none";
+};
+
 
 // =====================================================UNWANTED SECTION =========================================================================
 
