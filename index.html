@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkDen</title>
+    <link rel="stylesheet" href="link.css">
+</head>
+
+<body>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- ------------------------------------------- -->
+    <div id="loginContainer" class="login-container">
+        <div class="loginBox">
+            <div class="login-heading">
+                <div class="main">
+                    <h1>LinkDen</h1>
+                </div>
+                <div class="sub">
+                    <p>Manage Your Links</p>
+                </div>
+            </div>
+            <form id="loginForm" class="loginForm" onsubmit="login(event)">
+                <div class="userName">
+                    <label for="username"><ion-icon style="font-size: 30px;color: gray;padding-right: 20px;"
+                            name="person"></ion-icon></label>
+                    <input type="text" class="inputField" id="username" name="username" placeholder="Username" required>
+                </div>
+                <div class="userPassword">
+                    <label for="password"><ion-icon style="font-size: 30px;color: gray;padding-right: 20px;"
+                            name="lock-closed"></ion-icon></label>
+                    <input type="password" class="inputField" id="password" name="password" placeholder="Password"
+                        required>
+                </div>
+                <button type="submit" class="loginBtn">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="mainContainer" class="mainWindow" style="display: none;">
+        <div class="mainTopbar">
+            <div class="mainHead">
+                <p>LinkDen</p>
+            </div>
+            <div class="subHead">
+                <p>Manage Your Links</p>
+            </div>
+        </div>
+        <!-- ------------------------ -->
+        <div class="mainContent">
+            <div class="leftSection">
+                <div class="top">
+                    <div class="url">
+                        <label class="urlMark" for="url"><ion-icon name="link"></ion-icon></label>
+                        <input class="inputFieldLeft" type="text" id="url" placeholder="Enter URL">
+                    </div>
+
+                    <div class="name">
+                        <label class="nameMark" for="name"><ion-icon name="attach"></ion-icon></label>
+                        <input class="inputFieldLeft" type="text" id="name" placeholder="Enter link name">
+                    </div>
+                    <div class="save-btn">
+                        <button class="saveBtn" onclick="saveLink()">Save</button>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="bottomHeading">Recent Links</div>
+                    <div class="recentLink">
+                        <ul id="recentLinks"></ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="rightSection">
+                <div class="topRight">
+                    <div class="topSection">
+                        <form id="searchForm" action="" method="" onsubmit="searchLinks(event)">
+                            <div class="search">
+                                <input type="text" class="input_field_right" id="searchInput" placeholder="Search..."
+                                    autocomplete="off">
+                                <button id="searching" class="search_btn">search</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="bottomSection">
+                        <div class="filterSection">
+                            <!-- <div class="btn">
+                                <button id="applyFilter" class="filter_btn_main"><ion-icon name="funnel-outline"></ion-icon></button>
+                            </div> -->
+                            <div class="btn">
+                                <button id="filtering1" class="filter_btn" data-sort-order="nameAsc"
+                                    onclick="active_func1(1)">A to Z</button>
+                            </div>
+                            <div class="btn">
+                                <button id="filtering2" class="filter_btn" data-sort-order="nameDesc"
+                                    onclick="active_func2(2)">Z to A</button>
+                            </div>
+                            <div class="btn">
+                                <button id="filtering3" class="filter_btn" data-sort-order="dateDesc"
+                                    onclick="active_func3(3)">Latest first</button>
+                            </div>
+                            <div class="btn">
+                                <button id="filtering4" class="filter_btn" data-sort-order="dateAsc"
+                                    onclick="active_func4(4)">Oldest first</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bottomRight">
+                    <div class="savedLinks">
+                        <div class="bottomRightHeading">Your Links</div>
+                        <div class="scrollable-table">
+                            <table id="linkTable" class="tableLink">
+                                <thead>
+                                    <tr>
+                                        <div class="thContain">
+                                            <th>Date-Time</th>
+                                            <th>Name</th>
+                                            <th>URL</th>
+                                            <th>Action</th>
+                                        </div>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ------------------------------------------ -->
+        <footer>
+            <div class="footer_frame">
+
+                <div class="logo_footer">
+                    <a href="index.html">LinkDen</a>
+                </div>
+
+                <div class="bar1"></div>
+
+                <div class="list">
+                    <h3>Reach Out</h3>
+                    <ul>
+                        <li><a href="riddhidhara2003@gmail.com"><ion-icon name="mail" id="footer_logos"></ion-icon></a>
+                        </li>
+                        <li><a href="https://github.com/RiddhiDhara"><ion-icon name="logo-github"
+                                    id="footer_logos"></ion-icon></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="last_bar">
+                <div class="end">Copyright &#169;LinkDen | All rights reserved</div>
+                <div class="end1">Made with&nbsp;<ion-icon name="heart"></ion-icon>&nbsp;from INDIA</div>
+            </div>
+        </footer>
+    </div>
+</body>
+<script src="link.js"></script>
+
+</html>
